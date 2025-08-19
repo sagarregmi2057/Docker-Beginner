@@ -126,3 +126,8 @@ Static files are served from the `public/` directory. Place your HTML, CSS, or J
 - Ensure Node.js and npm are installed for local development.
 - The default port is 3000, but it can be customized using the `PORT` environment variable or Docker port mapping.
 - For production, consider adding a `.dockerignore` file to exclude unnecessary files (e.g., `node_modules`, `.git`).
+
+
+<!-- to delete all docker images and container  -->
+
+docker system prune -a
