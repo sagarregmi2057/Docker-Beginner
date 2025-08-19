@@ -6,6 +6,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
   res.json({ message: 'Welcome to the Express server!' });
 });
+
+app.get('/home', (req, res) => {
+res.json({ message: 'This is the home route!' });
+});
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
@@ -56,3 +60,34 @@ app.listen(PORT, () => {
 // If your app is running at http://localhost:8000 inside the container, you’ll now access it on your machine at:
 
 // http://localhost:3000
+
+// C:/Users/dell/dockernodejs
+
+
+
+
+
+
+
+
+
+
+
+
+
+// To create a Docker image for your Node.js application, you need to create a `Dockerfile` in the root of your project directory. Here's an example of what the `Dockerfile` might look like:
+
+// to create a image 
+
+//  docker build -t my-docker-app .
+// also we will declare as working directory in the dockerfile
+// for eg WORKDIR /app
+// Now, you can run the container with the following command:
+
+// to run the container with the volume
+
+// docker run -p 3000:3000 -v $(pwd):/app my-node-app
+
+// docker run --name nameofthecontainer -p the port you want to expose:the port your app is running on -v "C:/Users/dell/dockernodejs:/your defined working directory" your-image-name
+
+// docker run --name my-container -p 8000:3000 --rm -v "C:/Users/dell/dockernodejs:/app" my-docker-app
